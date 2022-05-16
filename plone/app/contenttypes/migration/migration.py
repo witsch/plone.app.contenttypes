@@ -50,7 +50,7 @@ logger = logging.getLogger(__name__)
 def migrate(portal, migrator):
     """return a CatalogWalker instance in order
     to have its output after migration"""
-    walker = CatalogWalker(portal, migrator)()
+    walker = CatalogWalker(portal, migrator, full_transaction=True, transaction_size=500)()
     return walker
 
 
